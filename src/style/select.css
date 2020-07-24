@@ -1,0 +1,9 @@
+.select_m { position: relative; z-index: 998; width: 100%; }
+.select_m h2 { border: 1px solid #00b5e9; background-color: #00b5e9; -moz-border-radius: 2px !important; -webkit-border-radius: 2px !important; border-radius: 2px !important; padding: 0 15px; height: 28px; color: #fff; font-size: 12px; text-align: left; line-height: 30px; cursor: default; }
+.select_m h2 i { width: 0; border-color: #FFF transparent transparent; border-style: solid; border-width: 6px; height: 0; position: absolute; top: 12px; right: 15px; }
+.select_m .option { left: 0; right: 0; position: absolute; top: 0; max-height: 278px; overflow-y: auto; border: 1px solid #eaeaea; background-color: #FFF; line-height: 30px; -webkit-box-shadow: 0 0 10px #C1C1C1; -moz-box-shadow: 0 0 10px #C1C1C1; box-shadow: 0 0 10px #C1C1C1; }
+.select_m .option p { cursor: pointer; padding: 0 5px; border-bottom: 1px dotted #e0e0e0; font-size: 12px; }
+.select_m .option p:hover { background-color: #00b5e9; color: #fff; }
+.divScrollBar { background-color: #ddd; position: absolute; opacity: 0.5; filter: Alpha(opacity=50); }
+.divScrollBar:hover { opacity: 1; filter: Alpha(opacity=100); }
+.divScrollBar div { background-color: #aaa; position: absolute; left: 0px; top: 0px; }
