@@ -4,7 +4,7 @@ import { jsScroll } from "./jsScroll"
 import { find, siblings, hide, show, removeClass, addClass } from "./dom";
 import { isString } from "util";
 import { eventsPath } from "./event";
-
+import fxLanguage from "../languages/cn"
 
 /**
  * 自定义下拉列表继承了自制滚动条

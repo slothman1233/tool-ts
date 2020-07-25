@@ -1,5 +1,5 @@
-/// <reference path="../src/languages/language.d.ts" />
-/// <reference path="../src/indexModel.d.ts" />
+/// <reference path="../languages/language.d.ts" />
+/// <reference path="../indexModel.d.ts" />
 interface proportionsModel extends proportionModel {
     allWidth?: number;
     allHeight?: number;

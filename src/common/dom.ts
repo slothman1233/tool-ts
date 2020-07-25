@@ -2,7 +2,7 @@
 import { isObject, getDataType } from './obj';
 import { computedStyle } from './computed-style';
 import { eleEqualStr } from './event';
-
+import fxLanguage from "../languages/cn"
 
 /**
  * 是否是元素
