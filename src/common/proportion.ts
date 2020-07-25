@@ -3,6 +3,7 @@
 import { mergeOptions, addEvent, removeEvent } from './compatible';
 import { NodeListToArray } from './obj';
 import { installEvents } from './subscrible';
+import fxLanguage from "../languages/cn"
 interface proportionsModel extends proportionModel {
     allWidth?: number //上传头像框的总宽  
     allHeight?: number //上传头像框的总高   

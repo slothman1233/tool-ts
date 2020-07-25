@@ -22,6 +22,7 @@ import * as imageMagnification from "./common/image-magnification"
 import * as contextmenu from "./common/contextmenu"
 import * as kkpager from "./common/kkpager"
 import * as proportion from "./common/proportion"
+import fxLanguage from "./languages/cn"
 import "./common/es6"
 export default class fxClass {
     language: object;
@@ -59,6 +60,33 @@ export default class fxClass {
         })
     }
 }
+
+
+export {
+    compatible,
+    browser,
+    computedStyle,
+    dom,
+    obj,
+    https,
+    subscrible,
+    log,
+    requestNextAnimationFrame,
+    event,
+    jsScroll,
+    ajaxfileupdate,
+    select,
+    slidePic,
+    dragsort,
+    linedragsort,
+    primes,
+    imageMagnification,
+    kkpager,
+    contextmenu,
+    proportion
+};
+
+
 // export default function (language: langStatic) {
 //     let instance;
 //     instance = new fxClass(language);

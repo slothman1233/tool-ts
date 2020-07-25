@@ -1,8 +1,10 @@
 {
     "name": "@stl/tool-ts",
-    "version": "0.1.0",
+    "version": "0.1.9",
     "description": "ts工具库",
-    "main": "dist/fxcn.js",
+    "main": "index.js",
+    "typings": "index.d.ts",
+    "types": "index.d.ts",
     "scripts": {
         "dev": "gulp clean:dist && rollup -c --environment NODE_ENV:development",
         "build": "gulp clean:dist && rollup -c --environment NODE_ENV:production",

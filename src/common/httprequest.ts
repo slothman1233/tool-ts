@@ -2,7 +2,7 @@
 import { mergeOptions } from "./compatible"
 import { log } from "./log"
 import { each } from './obj';
-
+import fxLanguage from "../languages/cn"
 declare var Function: any;
 
 const https = {
