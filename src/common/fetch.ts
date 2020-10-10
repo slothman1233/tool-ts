@@ -31,13 +31,6 @@ const post = (url,paramsObj)=>{
     });
     return result
 }
-
-
-
-
-
-
-
 export{
     get,
     post
