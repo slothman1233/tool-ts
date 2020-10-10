@@ -1,7 +1,27 @@
 import { extend } from "./compatible"
-import { log } from "util";
+// import { log } from "util";
 import { createEl, remove } from './dom';
-import { proportion } from "./proportion";
+interface updateDateMoel {
+    FileElementId: string
+    FileType: number
+    Uid: string
+}
+
+interface ajaxfileupdateModel {
+    url: string
+    type: number | string
+    dataType?: string
+    data: updateDateMoel
+    fileElementId: string
+    beforeSend?: Function
+    success: Function
+    error: Function
+    complete?: Function
+    secureuri?: boolean
+    filesize?: number
+    FileTypeArray?: Array<string>
+}
+//  import { proportion } from "./proportion";
 
 /*
      document.getElementById('upload-file').onchange = function () {

@@ -2,7 +2,7 @@
 import { mergeOptions } from "./compatible";
 import { jsScroll } from "./jsScroll"
 import { find, siblings, hide, show, removeClass, addClass } from "./dom";
-import { isString } from "util";
+import { isString } from "./obj";
 import { eventsPath } from "./event";
 import fxLanguage from "../languages/cn"
 
