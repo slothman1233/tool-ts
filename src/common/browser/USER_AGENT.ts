@@ -1,0 +1,1 @@
+export const USER_AGENT: string = window.navigator && window.navigator.userAgent || '';

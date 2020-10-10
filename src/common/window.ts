@@ -1,4 +1,5 @@
 var win:any;
+declare let global:any;
 
 if (typeof window !== "undefined") {
     win = window;

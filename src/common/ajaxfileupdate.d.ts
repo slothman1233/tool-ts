@@ -1,3 +1,22 @@
+interface updateDateMoel {
+    FileElementId: string;
+    FileType: number;
+    Uid: string;
+}
+interface ajaxfileupdateModel {
+    url: string;
+    type: number | string;
+    dataType?: string;
+    data: updateDateMoel;
+    fileElementId: string;
+    beforeSend?: Function;
+    success: Function;
+    error: Function;
+    complete?: Function;
+    secureuri?: boolean;
+    filesize?: number;
+    FileTypeArray?: Array<string>;
+}
 /**
  * 上传图片视频或者音频
  * fx.updateFile(data)
@@ -44,3 +63,4 @@
 export declare let updateFile: (datas: ajaxfileupdateModel) => {
     abort: () => void;
 };
+export {};

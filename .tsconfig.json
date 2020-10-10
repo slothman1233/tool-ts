@@ -5,7 +5,8 @@
         "module": "es2015",
         "target": "es2017",
         "declaration": true,
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true
     },
 
     "exclude": ["node_modules"],
