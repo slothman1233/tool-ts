@@ -22,60 +22,60 @@ getCookie("userKey")
 目录
 -----
 
-1. [Browser](#browser)
+1. [Browser](#browserjs)
 
     browser.ts:获取浏览器信息的一些变量   
 
-2. [Compatible](#compatible)
+2. [Compatible](#compatiblejs)
 
     compatible.ts:一些通用的方法（具体方法描述请转至下面方法详细说明）    
 
-3. [ComputedStyle](#computedstyle)
+3. [ComputedStyle](#computedstylejs)
 
     computed-style.ts:获取元素样式表里面的样式    
 
-4. [Dom](#dom)
+4. [Dom](#domjs)
 
     dom.ts:操作dom元素的方法集合    
 
-5. [Event](#event)
+5. [Event](#eventjs)
 
     event.ts:dom元素事件绑定的相关方法  
 
-6. [Obj](#obj)
+6. [Obj](#objjs)
 
     obj.ts:数据类型判断及转换的相关方法    
 
-7. [Es6](#es6)
+7. [Es6](#es6js)
 
     es6.ts:数组迭代方法的实现
 
-8. [Fetch](#fetch)
+8. [Fetch](#fetchjs)
 
     fetch.ts:用于访问和操纵HTTP管道的一些具体部分，例如请求和响应。
 
-9. [Log](#log)
+9. [Log](#logjs)
 
     log.ts:console.log和alert的封装。
 
-10. [Priomse](#priomse)
+10. [Priomse](#priomsejs)
 
     priomse.ts:简易promise实现
 
-11. [RequestNextAnimationFrame](#requestNextAnimationFrame)
+11. [RequestNextAnimationFrame](#requestNextAnimationFramejs)
 
     requestNextAnimationFrame.ts:requestAnimationFrame实现
 
-12. [Subscrible](#subscrible)
+12. [Subscrible](#subscriblejs)
 
     subscrible.ts:动态安装 发布-订阅功能
 
-13. [Window](#window)
+13. [Window](#windowjs)
 
     window.ts:返回window对象
   
 ## browser.js 
-<div id = "browser"></div>
+<div id="browser"></div>
 
   *方法三引入路径：import { 方法名 } from "@stl/tool-ts/src/common/browser/方法名"*
 
