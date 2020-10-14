@@ -401,6 +401,13 @@ getCookie("userKey")
       * @return {Array} 转化后的数组  
       * var nodeList = document.querySelectorAll(".box")  
       * NodeListToArray(nodeList)  
+
+  `6. pySegSort(arr) 中文按照拼音排序，并且可以将中文按照a,b,c,d……进行区分`  
+      * @param {NodeList} arr 数组类型  
+      * @return {Array} 转化后的数组  
+      * let arr = ['白鸽', '麻雀','黑','大象', '狗', '猫','妈妈','马', "鸡",'瘦','胖']
+      * pySegSort(arr)  
+      *返回结果  [{letter:"b",data:["白鸽"]},{letter:"d",data:["大象"]}...]
   
   
 ## es6.js 

@@ -4,7 +4,8 @@ import { each } from "./obj/each";
 import { isPlain } from "./obj/isPlain";
 import { isString } from "./obj/isString";
 import { NodeListToArray } from "./obj/NodeListToArray";
+import { pySegSort } from "./obj/pySegSort";
 export default class fxClass {
     constructor();
 }
-export { isObject, getDataType, each, isPlain, isString, NodeListToArray };
+export { isObject, getDataType, each, isPlain, isString, NodeListToArray, pySegSort };
