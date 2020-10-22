@@ -237,12 +237,12 @@ getCookie("userKey")
  
   `16. parent(ele, tag) 返回指定的父级元素`  
         * @param {Element} ele 当前元素  
-        * @param {string} tag 返回元素的名  
+        * @param {string} tag 返回元素的名   #id   .class  aa[data-id=aa] [data-id]
         * @return {Element | null} 返回指定的元素，没有则返回null  
 
   `17. parents(ele, tag) 返回指定的父级元素集合`  
         * @param {Element} ele 当前元素  
-        * @param {string} tag 返回元素的名  
+        * @param {string} tag 返回元素的名  #id   .class  aa[data-id=aa] [data-id] 
         * @return {Element<Element|undefined>} 返回指定的元素集合，没有则返回[]  
 
   `18. getOffset(Node, ele?) 获取元素的偏移量 相对计算 相对于上一个定位元素的计算`  
@@ -402,12 +402,17 @@ getCookie("userKey")
       * var nodeList = document.querySelectorAll(".box")  
       * NodeListToArray(nodeList)  
 
-  `6. pySegSort(arr) 中文按照拼音排序，并且可以将中文按照a,b,c,d……进行区分`  
+  `6. pySegSort(arr,arr1) 中文按照拼音排序，并且可以将中文按照a,b,c,d……进行区分`  
       * @param {NodeList} arr 数组类型  
+      * @param {NodeList} arr1 数组类型 
       * @return {Array} 转化后的数组  
       * let arr = ['白鸽', '麻雀','黑','大象', '狗', '猫','妈妈','马', "鸡",'瘦','胖']
       * pySegSort(arr)  
       *返回结果  [{letter:"b",data:["白鸽"]},{letter:"d",data:["大象"]}...]
+      * let arr = ['白鸽', '麻雀','黑','大象', '狗', '猫','妈妈', "鸡",'瘦','胖','马']
+      * let arr1 = [1, 2,3,4,5,6,7,8,9,10,11]
+      * pySegSort(arr,arr1)  
+      *返回结果  [{letter:"b",data:["白鸽"],id:[1]}...{letter:"m",data:["马","妈妈","麻雀","猫",],id:[11,7,2,6]}...]
   
   
 ## es6.js 
