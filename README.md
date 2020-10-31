@@ -118,6 +118,7 @@ getCookie("userKey")
   | mergeOptions | 合并对象 | args (Array<Any>) 所有的参数   如有重名后面的参数替换前面的参数;sources 需要合并的对象 | 合并后的对象 | mergeOptions(obj1,obj2...,obj) |
   | extend | 递归替换 | args (Array<Any>) 所有的参数   后面的参数替换前面的参数(extend({a:1,b:2},{a:2,c:3}) =>  {a:2,b:2,c:3}) | 替换后的对象 | extend(obj1,obj2...,obj) |
   | addScriptLoad | 异步加载js文件 | fileAry (Array<String>) js文件的数组 | 无 | addScriptLoad(fileAry) |
+  | addLinkLoad | 异步加载css文件 | fileAry (Array<String>) js文件的数组 | 无 | addLinkLoad(fileAry) |
   | dataState | 请求回传的状态 | subCode (string) 状态码 | true 成功 false 失败 | dataState(subCode) |
   | strlen | 把中英文的长度都转成字符串行的长度 中文：2个字符 英文：1个字符  | str (string) | (number) 长度 | strlen(str) |
   | index | 获取元素的下标  | Ele (Element) 当前元素 | 元素的下标 (number) | index(Ele) |
