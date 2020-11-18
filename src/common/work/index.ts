@@ -1,6 +1,6 @@
 
-import webwork from "./webwork";
 import serverwork from "./serverwork";
+import webwork from "./webwork";
 
 export default class fxClass {
   constructor() {
@@ -8,9 +8,11 @@ export default class fxClass {
       (<any>webwork),
       (<any>serverwork)
     ].forEach(k => {
-      (<any>fxClass).prototype[k] = (<any>k[k]);
+      for (let i in k) {
+          (<any>fxClass).prototype[i] = (<any>k[i]);
+      }
 
-    })
+  })
   }
 }
 

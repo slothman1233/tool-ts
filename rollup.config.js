@@ -12,6 +12,8 @@ import postcss from 'rollup-plugin-postcss'; //样式处理
 import autoprefixer from 'autoprefixer'; //自动补全
 import cssnano from 'cssnano'; //样式的压缩合并
 import tsconfigOverride from "./.tsconfig.json"
+
+import builtins from 'rollup-plugin-node-builtins'
 const env = process.env.NODE_ENV;
 
 const rollupTs = () => {
@@ -42,6 +44,7 @@ const config = () => {
                     sourcemap: (env === 'production' ? false : true), //代码映射，方便调试
                 },
                 plugins: [
+                    builtins(),
                     json(),
                     rollupTs(),
                     commonjs(),
