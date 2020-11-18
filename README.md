@@ -22,60 +22,77 @@ getCookie("userKey")
 目录
 -----
 
-1. [Browser](#browser)
+1. [Browser](#browserjs)
 
     browser.ts:获取浏览器信息的一些变量   
 
-2. [Compatible](#compatible)
+2. [Compatible](#compatiblejs)
 
     compatible.ts:一些通用的方法（具体方法描述请转至下面方法详细说明）    
 
-3. [ComputedStyle](#computedstyle)
+3. [ComputedStyle](#computedstylejs)
 
     computed-style.ts:获取元素样式表里面的样式    
 
-4. [Dom](#dom)
+4. [Dom](#domjs)
 
     dom.ts:操作dom元素的方法集合    
 
-5. [Event](#event)
+5. [Event](#eventjs)
 
     event.ts:dom元素事件绑定的相关方法  
 
-6. [Obj](#obj)
+6. [Obj](#objjs)
 
-    obj.ts:数据类型判断及转换的相关方法    
+    obj.ts:数据类型判断及转换的相关方法   
 
-7. [Es6](#es6)
+7. [object](#objectjs)
+
+    object.ts:解决object对象下某些方法兼容性
+
+8. [array](#arrayjs)
+
+    array.ts:解决array对象下某些方法兼容性
+
+
+9. [number](#numberjs)
+
+    number.ts:格式化数字的相关方法
+
+10. [Es6](#es6js)
 
     es6.ts:数组迭代方法的实现
 
-8. [Fetch](#fetch)
+11. [Fetch](#fetchjs)
 
     fetch.ts:用于访问和操纵HTTP管道的一些具体部分，例如请求和响应。
 
-9. [Log](#log)
+12. [Log](#logjs)
 
     log.ts:console.log和alert的封装。
 
-10. [Priomse](#priomse)
+13. [Priomse](#priomsejs)
 
     priomse.ts:简易promise实现
 
-11. [RequestNextAnimationFrame](#requestNextAnimationFrame)
+14. [RequestNextAnimationFrame](#requestNextAnimationFramejs)
 
     requestNextAnimationFrame.ts:requestAnimationFrame实现
 
-12. [Subscrible](#subscrible)
+15. [Subscrible](#subscriblejs)
 
     subscrible.ts:动态安装 发布-订阅功能
 
-13. [Window](#window)
+16. [Window](#windowjs)
 
     window.ts:返回window对象
+15. [work](#workjs)
+
+    webwork.ts web端的work线程池控制
+    serverwork server端的work线程池控制
   
 ## browser.js 
-<div id = "browser"></div>
+<div id="browser"></div>
 
   *方法三引入路径：import { 方法名 } from "@stl/tool-ts/src/common/browser/方法名"*
 
@@ -114,6 +131,8 @@ getCookie("userKey")
   | mergeOptions | 合并对象 | args (Array<Any>) 所有的参数   如有重名后面的参数替换前面的参数;sources 需要合并的对象 | 合并后的对象 | mergeOptions(obj1,obj2...,obj) |
   | extend | 递归替换 | args (Array<Any>) 所有的参数   后面的参数替换前面的参数(extend({a:1,b:2},{a:2,c:3}) =>  {a:2,b:2,c:3}) | 替换后的对象 | extend(obj1,obj2...,obj) |
   | addScriptLoad | 异步加载js文件 | fileAry (Array<String>) js文件的数组 | 无 | addScriptLoad(fileAry) |
+  | addLinkLoad | 异步加载css文件 | fileAry (Array<String>) js文件的数组 | 无 | addLinkLoad(fileAry) |
+  | toFormData | 转FormData数据 | data 需要转换的数据 | 转换后的数据 | toFormData(data) |
   | dataState | 请求回传的状态 | subCode (string) 状态码 | true 成功 false 失败 | dataState(subCode) |
   | strlen | 把中英文的长度都转成字符串行的长度 中文：2个字符 英文：1个字符  | str (string) | (number) 长度 | strlen(str) |
   | index | 获取元素的下标  | Ele (Element) 当前元素 | 元素的下标 (number) | index(Ele) |
@@ -237,12 +256,12 @@ getCookie("userKey")
  
   `16. parent(ele, tag) 返回指定的父级元素`  
         * @param {Element} ele 当前元素  
-        * @param {string} tag 返回元素的名  
+        * @param {string} tag 返回元素的名   #id   .class  aa[data-id=aa] [data-id]
         * @return {Element | null} 返回指定的元素，没有则返回null  
 
   `17. parents(ele, tag) 返回指定的父级元素集合`  
         * @param {Element} ele 当前元素  
-        * @param {string} tag 返回元素的名  
+        * @param {string} tag 返回元素的名  #id   .class  aa[data-id=aa] [data-id] 
         * @return {Element<Element|undefined>} 返回指定的元素集合，没有则返回[]  
 
   `18. getOffset(Node, ele?) 获取元素的偏移量 相对计算 相对于上一个定位元素的计算`  
@@ -401,7 +420,77 @@ getCookie("userKey")
       * @return {Array} 转化后的数组  
       * var nodeList = document.querySelectorAll(".box")  
       * NodeListToArray(nodeList)  
-  
+
+  `6. pySegSort(arr,arr1) 中文按照拼音排序，并且可以将中文按照a,b,c,d……进行区分`  
+      * @param {NodeList} arr 数组类型  
+      * @param {NodeList} arr1 数组类型 
+      * @return {Array} 转化后的数组  
+      * let arr = ['白鸽', '麻雀','黑','大象', '狗', '猫','妈妈','马', "鸡",'瘦','胖']
+      * pySegSort(arr)  
+      *返回结果  [{letter:"b",data:["白鸽"]},{letter:"d",data:["大象"]}...]
+      * let arr = ['白鸽', '麻雀','黑','大象', '狗', '猫','妈妈', "鸡",'瘦','胖','马']
+      * let arr1 = [1, 2,3,4,5,6,7,8,9,10,11]
+      * pySegSort(arr,arr1)  
+      *返回结果  [{letter:"b",data:["白鸽"],id:[1]}...{letter:"m",data:["马","妈妈","麻雀","猫",],id:[11,7,2,6]}...]
+
+## object.js 
+<div id="object"></div>
+
+   *方法三引入路径：import { 方法名 } from "@stl/tool-ts/src/common/object/方法名"*
+
+   `1. keys() Object.keys()兼容性处理`  
+      * 可以引入后直接使用Object.keys()也可以使用keys()的方式调用
+
+## array.js 
+<div id="array"></div>
+
+   *方法三引入路径：import { 方法名 } from "@stl/tool-ts/src/common/array/方法名"*
+
+   `1. find() Array.find()兼容性处理`  
+      * 可以引入后直接使用Array.find()
+
+   `2. findIndex() Array.findIndex()兼容性处理`  
+      * 可以引入后直接使用Array.findIndex()
+
+   `1. includes() Array.includes()兼容性处理`  
+      * 可以引入后直接使用Array.includes()
+
+
+
+## number.js 
+<div id="number"></div>
+
+  *方法三引入路径：import { 方法名 } from "@stl/tool-ts/src/common/number/方法名"*
+
+  `1. cutNumber(num) 数字每三位加逗号`  
+      * @param {number} num 需要格式化的数字  
+      * @return {string} 格式化后的数字   
+      * cutNumber(123456) "123,456"  
+
+  `2. tranNumber(num,point,unit,tofixe) 数字添加单位（"万","亿"）`  
+      * @param {number} num 需要格式化的数字  
+      * @param {Number} point 需要保留的小数位数 没有则传0  
+      * @param {Array} unit 需要添加的单位列表 如["万","亿"] 可传单位："百","千","万","十万","百万","千万","亿"  
+      * @param {Boolean} tofixe 是否需要四舍五入  默认为true，传false时则向下保留小数  
+      * @return {string} 格式化后的数字  
+      * tranNumber(123456789.54,2,["万","亿"])   
+
+  `3. makeupDecimal(num,point,fixeType) 保留n位小数，补零处理`  
+      * @param {number} num 需要格式化的数字  
+      * @param {number} point 需要保留的小数位数 没有则传0  
+      * @param {string} fixeType 可选值 fixe：四舍五入保留小数,floor：向下保留小数,ceil:向上保留小数 默认为fixe;  
+      * @return {string} 格式化后的数字  
+      * makeupDecimal(1.999,2,"floor") "1.99"  
+      * makeupDecimal(1.999,2) "2.00"  
+
+   `4. unmakeupDecimal(num,point,fixeType) 保留n位小数，不补零处理`  
+      * @param {number} num 需要格式化的数字  
+      * @param {number} point 需要保留的小数位数 没有则传0  
+      * @param {string} fixeType 可选值 fixe：四舍五入保留小数，floor：向下保留小数，ceil:向上保留小数  默认为fixe;  
+      * @return {string} 格式化后的数字   
+      * unmakeupDecimal(1.999,2,"floor") "1.99"   
+      * unmakeupDecimal(1.999,2) "2"  
+
   
 ## es6.js 
 <div id="es6"></div>
@@ -491,3 +580,60 @@ getCookie("userKey")
 使用方法:
     import window from '@stl/tool-ts/src/common/window';
 ```
+
+## work.js
+<div id="work"></div>
+
+
+ `1. webwork.js` 
+   *引入路径：import webwork from "@stl/tool-ts/src/common/work/webwork"*
+
+```
+使用方法:
+    主线程
+    import webwork from "@stl/tool-ts/src/common/work/webwork";
+
+    const worker = new workjs('/script/b.js', 3)
+
+    //错误示范
+    // await 卡住了整个for循环
+    // for (let i = 0; i < 100; i++) {
+    //     const ss = await worker.run<string>(i + 'WWWEERERERERER')
+    //     console.log(ss)
+    // }
+    // worker.destroy()
+
+
+    //正确的使用方式
+    let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41]
+
+    Promise.all(a.map(async item => {
+        const ss = await worker.run(item + 'WWWEERERERERER')
+        console.log(ss)
+        return ss
+    })).then((t) =>{
+        console.log(t)
+        //  worker.destroy()
+    })
+
+    ------------------------ 子线程  ------------------------
+
+    self.onmessage = function(data){
+        self.postMessage(data + '333')
+    }
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+

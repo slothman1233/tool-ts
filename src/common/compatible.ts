@@ -8,6 +8,8 @@ import { GethashString } from "./compatible/GethashString";
 import { mergeOptions } from "./compatible/mergeOptions";
 import { extend } from "./compatible/extend";
 import { addScriptLoad } from "./compatible/addScriptLoad";
+import { addLinkLoad } from "./compatible/addLinkLoad";
+import { toFormData } from "./compatible/toFormData";
 import { dataState } from "./compatible/dataState";
 import { strlen } from "./compatible/strlen";
 import { index } from './compatible/index';
@@ -27,6 +29,8 @@ export default class fxClass {
             (<any>mergeOptions),
             (<any>extend),
             (<any>addScriptLoad),
+            (<any>addLinkLoad),
+            (<any>toFormData),
             (<any>dataState),
             (<any>strlen),
             (<any>index),
@@ -55,6 +59,8 @@ export {
   mergeOptions,
   extend,
   addScriptLoad,
+  addLinkLoad,
+  toFormData,
   dataState,
   strlen,
   index,

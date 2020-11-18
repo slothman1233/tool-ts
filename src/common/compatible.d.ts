@@ -7,6 +7,8 @@ import { GethashString } from "./compatible/GethashString";
 import { mergeOptions } from "./compatible/mergeOptions";
 import { extend } from "./compatible/extend";
 import { addScriptLoad } from "./compatible/addScriptLoad";
+import { addLinkLoad } from "./compatible/addLinkLoad";
+import { toFormData } from "./compatible/toFormData";
 import { dataState } from "./compatible/dataState";
 import { strlen } from "./compatible/strlen";
 import { index } from './compatible/index';
@@ -16,4 +18,4 @@ import { getChildElementNodes } from "./compatible/getChildElementNodes";
 export default class fxClass {
     constructor();
 }
-export { addEvent, removeEvent, getCookie, setCookie, GetQueryString, GethashString, mergeOptions, extend, addScriptLoad, dataState, strlen, index, trim, toFixeds, getChildElementNodes, };
+export { addEvent, removeEvent, getCookie, setCookie, GetQueryString, GethashString, mergeOptions, extend, addScriptLoad, addLinkLoad, toFormData, dataState, strlen, index, trim, toFixeds, getChildElementNodes, };

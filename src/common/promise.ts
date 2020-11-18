@@ -1,6 +1,6 @@
 import window from "./window"
 
-export const promise = function () {
+export const promise: PromiseConstructor = function () {
     if (!window.Promise) {
         class Promise {
             cache:any
@@ -128,3 +128,4 @@ export const promise = function () {
     return window.Promise;
 
 }()
+
