@@ -12,7 +12,6 @@ import * as event from "./common/event";
 import * as requestNextAnimationFrame from "./common/requestNextAnimationFrame";
 import * as promise from "./common/promise";
 import * as work from "./common/work";
-import "./common/es6";
 export default class fxClass {
     language: object;
     constructor(language: langStatic);

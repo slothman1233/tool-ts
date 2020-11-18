@@ -1,6 +1,6 @@
 {
   "name": "@stl/tool-ts",
-  "version": "0.6.7",
+  "version": "1.0.1",
   "description": "ts工具库",
   "main": "index.js",
   "typings": "index.d.ts",

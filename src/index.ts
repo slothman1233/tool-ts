@@ -13,7 +13,7 @@ import * as requestNextAnimationFrame from "./common/requestNextAnimationFrame"
 import * as promise from "./common/promise"
 import fxLanguage from "./languages/cn"
 import * as work from "./common/work"
-import "./common/es6"
+// import "./common/es6"
 export default class fxClass {
     language: object;
     constructor(language: langStatic) {
