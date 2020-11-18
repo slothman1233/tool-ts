@@ -9,6 +9,7 @@ import { mergeOptions } from "./compatible/mergeOptions";
 import { extend } from "./compatible/extend";
 import { addScriptLoad } from "./compatible/addScriptLoad";
 import { addLinkLoad } from "./compatible/addLinkLoad";
+import { toFormData } from "./compatible/toFormData";
 import { dataState } from "./compatible/dataState";
 import { strlen } from "./compatible/strlen";
 import { index } from './compatible/index';
@@ -29,6 +30,7 @@ export default class fxClass {
             (<any>extend),
             (<any>addScriptLoad),
             (<any>addLinkLoad),
+            (<any>toFormData),
             (<any>dataState),
             (<any>strlen),
             (<any>index),
@@ -58,6 +60,7 @@ export {
   extend,
   addScriptLoad,
   addLinkLoad,
+  toFormData,
   dataState,
   strlen,
   index,
