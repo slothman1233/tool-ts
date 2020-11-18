@@ -77,6 +77,10 @@ getCookie("userKey")
 14. [Window](#windowjs)
 
     window.ts:返回window对象
+15. [work](#workjs)
+
+    webwork.ts web端的work线程池控制
+    serverwork server端的work线程池控制
   
 ## browser.js 
 <div id="browser"></div>
@@ -542,3 +546,13 @@ getCookie("userKey")
 使用方法:
     import window from '@stl/tool-ts/src/common/window';
 ```
+
+## work.js
+<div id="work"></div>
+   *引入路径：import { webwork,serverwork } from "@stl/tool-ts/src/common/work"*
+
+
+
+
+
+
