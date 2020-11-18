@@ -45,7 +45,7 @@ work 线程池的方法
         return ss
     })).then((t) =>{
         console.log(t)
-        //关闭线程
+        //清空所有子线程
         worker.destroy()
     })
 
