@@ -1,1 +1,1 @@
-export declare const findIndex: void;
+export {};
