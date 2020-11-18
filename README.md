@@ -44,37 +44,46 @@ getCookie("userKey")
 
 6. [Obj](#objjs)
 
-    obj.ts:数据类型判断及转换的相关方法    
+    obj.ts:数据类型判断及转换的相关方法   
 
-7. [number](#numberjs)
+7. [object](#objectjs)
+
+    object.ts:解决object对象下某些方法兼容性
+
+8. [array](#arrayjs)
+
+    array.ts:解决array对象下某些方法兼容性
+
+
+9. [number](#numberjs)
 
     number.ts:格式化数字的相关方法
 
-8. [Es6](#es6js)
+10. [Es6](#es6js)
 
     es6.ts:数组迭代方法的实现
 
-9. [Fetch](#fetchjs)
+11. [Fetch](#fetchjs)
 
     fetch.ts:用于访问和操纵HTTP管道的一些具体部分，例如请求和响应。
 
-10. [Log](#logjs)
+12. [Log](#logjs)
 
     log.ts:console.log和alert的封装。
 
-11. [Priomse](#priomsejs)
+13. [Priomse](#priomsejs)
 
     priomse.ts:简易promise实现
 
-12. [RequestNextAnimationFrame](#requestNextAnimationFramejs)
+14. [RequestNextAnimationFrame](#requestNextAnimationFramejs)
 
     requestNextAnimationFrame.ts:requestAnimationFrame实现
 
-13. [Subscrible](#subscriblejs)
+15. [Subscrible](#subscriblejs)
 
     subscrible.ts:动态安装 发布-订阅功能
 
-14. [Window](#windowjs)
+16. [Window](#windowjs)
 
     window.ts:返回window对象
   
@@ -119,6 +128,7 @@ getCookie("userKey")
   | extend | 递归替换 | args (Array<Any>) 所有的参数   后面的参数替换前面的参数(extend({a:1,b:2},{a:2,c:3}) =>  {a:2,b:2,c:3}) | 替换后的对象 | extend(obj1,obj2...,obj) |
   | addScriptLoad | 异步加载js文件 | fileAry (Array<String>) js文件的数组 | 无 | addScriptLoad(fileAry) |
   | addLinkLoad | 异步加载css文件 | fileAry (Array<String>) js文件的数组 | 无 | addLinkLoad(fileAry) |
+  | toFormData | 转FormData数据 | data 需要转换的数据 | 转换后的数据 | toFormData(data) |
   | dataState | 请求回传的状态 | subCode (string) 状态码 | true 成功 false 失败 | dataState(subCode) |
   | strlen | 把中英文的长度都转成字符串行的长度 中文：2个字符 英文：1个字符  | str (string) | (number) 长度 | strlen(str) |
   | index | 获取元素的下标  | Ele (Element) 当前元素 | 元素的下标 (number) | index(Ele) |
@@ -418,6 +428,30 @@ getCookie("userKey")
       * let arr1 = [1, 2,3,4,5,6,7,8,9,10,11]
       * pySegSort(arr,arr1)  
       *返回结果  [{letter:"b",data:["白鸽"],id:[1]}...{letter:"m",data:["马","妈妈","麻雀","猫",],id:[11,7,2,6]}...]
+
+## object.js 
+<div id="object"></div>
+
+   *方法三引入路径：import { 方法名 } from "@stl/tool-ts/src/common/object/方法名"*
+
+   `1. keys() Object.keys()兼容性处理`  
+      * 可以引入后直接使用Object.keys()也可以使用keys()的方式调用
+
+## array.js 
+<div id="array"></div>
+
+   *方法三引入路径：import { 方法名 } from "@stl/tool-ts/src/common/array/方法名"*
+
+   `1. find() Array.find()兼容性处理`  
+      * 可以引入后直接使用Array.find()
+
+   `2. findIndex() Array.findIndex()兼容性处理`  
+      * 可以引入后直接使用Array.findIndex()
+
+   `1. includes() Array.includes()兼容性处理`  
+      * 可以引入后直接使用Array.includes()
+
+
 
 ## number.js 
 <div id="number"></div>
