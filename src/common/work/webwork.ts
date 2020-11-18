@@ -1,4 +1,4 @@
-
+import * as ps from '../promise'
 
 const cpusLength = 1
 
@@ -127,7 +127,7 @@ class workerPool {
    */
   run<T>(data: any): Promise<T> {
 
-    return new Promise((resolve, reject) => {
+    return new ps.promise((resolve, reject) => {
       // 调用 getInactiveWorkerId() 获取一个空闲的 Worker
       const availableWorkerId = this.getInactiveWorkerId()
 

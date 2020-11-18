@@ -58,7 +58,8 @@
     "expect.js": "^0.3.1",
     "fetch-polyfill2": "0.0.3",
     "gulp": "^4.0.0",
-    "gulp-cli": "^2.0.1"
+    "gulp-cli": "^2.0.1",
+    "rollup-plugin-node-builtins": "^2.1.2"
   },
   "directories": {
     "test": "test"

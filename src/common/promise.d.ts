@@ -1,1 +1,1 @@
-export declare const promise: any;
+export declare const promise: PromiseConstructor;
