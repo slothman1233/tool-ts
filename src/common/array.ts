@@ -1,3 +1,11 @@
 import "./array/find";
 import  "./array/findIndex";
+import "./array/indexOf";
+import "./array/forEach";
+import "./array/map";
+import "./array/filter";
+import "./array/some";
+import "./array/every";
+import "./array/copyWithin";
 import "./array/includes";
+import "./array/reduce";
