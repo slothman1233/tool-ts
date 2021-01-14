@@ -248,6 +248,16 @@ getCookie("userKey")
             * @param {number} time 运动时长 默认1000 
             * @param {0|1} type 运动类型 0为匀速运动，1为缓冲运动 默认为1 
     ```
+18. [h5toapp](#h5toappjs):js跟app交互
+    ```
+    使用方法：
+         * index(type,{参数名:参数值,参数名2:参数值2,...参数名n:参数值n})
+         * @param {Stirng} type 方法类型名
+         * @param {Object} obj  参数列表
+         * @example  
+         *      index("aa",{a:1,b:2})  
+     
+    ```
 
 
 
