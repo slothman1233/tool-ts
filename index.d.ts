@@ -9,4 +9,5 @@ import * as event from "./src/common/event";
 import * as requestNextAnimationFrame from "./src/common/requestNextAnimationFrame";
 import * as promise from "./src/common/promise";
 import * as work from "./src/common/work";
-export { compatible, browser, computedStyle, dom, obj, subscrible, log, requestNextAnimationFrame, event, promise, work };
+import * as h5toapp from "./src/common/h5toapp";
+export { compatible, browser, computedStyle, dom, obj, subscrible, log, requestNextAnimationFrame, event, promise, work, h5toapp };

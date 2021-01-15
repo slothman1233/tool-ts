@@ -19,7 +19,7 @@ type workerByIdModel = {
 }
 
 type wrokTypeModel = {
-  [propName: number]:boolean
+  [propName: number]: boolean
 }
 
 /**
@@ -35,7 +35,7 @@ class workerPool {
   _workerById: workerByIdModel = {}
 
   // Worker 激活状态索引
-  _activeWorkerById:wrokTypeModel = {}
+  _activeWorkerById: wrokTypeModel = {}
 
   //启动线程的数量
   numberOfThreads: number = cpusLength
@@ -67,7 +67,7 @@ class workerPool {
    */
   getInactiveWorkerId() {
     for (let i = 0; i < this.numberOfThreads; i++) {
-      if (!this._activeWorkerById[i]) { return i }
+      if (this._activeWorkerById[i] === false) { return i }
     }
     return -1
   }
@@ -126,7 +126,10 @@ class workerPool {
    * @param {any} data 传给子线程的参数 
    */
   run<T>(data: any): Promise<T> {
-
+    if(JSON.stringify(this._activeWorkerById) === "{}") {
+      ps.promise.reject('worker子线程已经被销毁')
+      return
+    }
     return new ps.promise((resolve, reject) => {
       // 调用 getInactiveWorkerId() 获取一个空闲的 Worker
       const availableWorkerId = this.getInactiveWorkerId()
@@ -169,6 +172,11 @@ class workerPool {
 
       this._workerById[i].terminate()
     }
+    // Worker 索引
+    this._workerById = {}
+
+    // Worker 激活状态索引
+    this._activeWorkerById = {}
   }
 
 }

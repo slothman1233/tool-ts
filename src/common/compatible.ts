@@ -36,7 +36,7 @@ export default class fxClass {
             (<any>index),
             (<any>trim),
             (<any>toFixeds),
-            (<any>getChildElementNodes),
+            (<any>getChildElementNodes)
 
         ].forEach(k => {
             for (let i in k) {
