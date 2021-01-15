@@ -1,3 +1,4 @@
+/// <reference path="../indexModel.d.ts" />
 import { dom } from "./event/dom";
 import { eleEqualStr } from "./event/eleEqualStr";
 import { eventsPath } from "./event/eventsPath";

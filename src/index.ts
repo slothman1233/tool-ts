@@ -13,7 +13,8 @@ import * as requestNextAnimationFrame from "./common/requestNextAnimationFrame"
 import * as promise from "./common/promise"
 import fxLanguage from "./languages/cn"
 import * as work from "./common/work"
-import "./common/es6"
+import * as h5toapp from "./common/h5toapp"
+// import "./common/es6"
 export default class fxClass {
     language: object;
     constructor(language: langStatic) {
@@ -30,7 +31,8 @@ export default class fxClass {
             (<any>requestNextAnimationFrame),
             (<any>event),
             (<any>promise),
-            (<any>work)
+            (<any>work),
+            (<any>h5toapp)
         ].forEach(k => {
             for (let i in k) {
                 if ((<any>fxClass).prototype[i]) { new Error(`${fxLanguage.index.error}${i}`); }
@@ -54,7 +56,8 @@ export {
     requestNextAnimationFrame,
     event,
     promise,
-    work
+    work,
+    h5toapp
 };
 
 

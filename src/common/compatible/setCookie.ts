@@ -7,11 +7,12 @@
                         h是指小时，如12小时则是：h12
                         d是天数，30天则：d30
  */
-export const setCookie = function (name: string, value: string, time: string) {
+export const setCookie = function (name: string, value: string, time: string,domain?:string) {
     var strsec = getsec(time);
     var exp: any = new Date();
+    let domainStr = domain?";domain="+domain:"";
     exp.setTime(exp.getTime() + strsec * 1);
-    document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString() + ";path=/";
+    document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString() + ";path=/"+domainStr;
   }
   function getsec(str: string) {
     var str1: number = parseFloat(str.substring(1, str.length));
