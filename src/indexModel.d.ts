@@ -5,9 +5,9 @@ interface IE8HTMLInputElement extends HTMLInputElement {
 
 interface events {
     clientList: object
-    listen(key: string, fn)
-    trigger(key, ...arg)
-    remove(key, fn?)
+    listen(key: string, fn:any):void
+    trigger(key:any, ...arg:any[]):void
+    remove(key:any, fn?:any):void
 }
 
 interface xhr {
@@ -35,7 +35,7 @@ interface listenDataModel {
     agent?: any
     ele: string
     events: string
-    fn
+    fn:any
 }
 
 interface ajaxfileupdateModel {
@@ -61,12 +61,12 @@ interface updateDateMoel {
 
 
 interface Promises {
-    new(method): Promises;
-    then(resolve, reject?): Promises;
-    catch(e): Promises;
-    all(data): Promises
-    resolve(arg): Promises
-    reject(data): Promises
+    new(method:any): Promises;
+    then(resolve:any, reject?:any): Promises;
+    catch(e:any): Promises;
+    all(data:any): Promises
+    resolve(arg:any): Promises
+    reject(data:any): Promises
 
 }
 

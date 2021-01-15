@@ -24,7 +24,7 @@ getCookie("userKey")
 
 1. [Browser](#browserjs)
     
-    [详细说明](https://gitwbp5.wbp5.com/npm/tool-ts/tree/dev/src/common/browser/README.md)
+    [详细说明](https://gitwbp5.tostar.top/npm/tool-ts/tree/dev/src/common/browser/README.md)
     ```
     包含变量：
     IS_PC:是否是PC端，  
@@ -47,7 +47,7 @@ getCookie("userKey")
 
 2. [Compatible](#compatiblejs)
 
-    [详细说明](https://gitwbp5.wbp5.com/npm/tool-ts/tree/dev/src/common/compatible/README.md)
+    [详细说明](https://gitwbp5.tostar.top/npm/tool-ts/tree/dev/src/common/compatible/README.md)
     ```
     包含方法：
     addEvent:绑定方法,  
@@ -81,7 +81,7 @@ getCookie("userKey")
 
 4. [Dom](#domjs)
 
-    [详细说明](https://gitwbp5.wbp5.com/npm/tool-ts/tree/dev/src/common/dom/README.md)  
+    [详细说明](https://gitwbp5.tostar.top/npm/tool-ts/tree/dev/src/common/dom/README.md)  
     ```
     包含方法：
     isTextNode:判断是否是文本  
@@ -115,7 +115,7 @@ getCookie("userKey")
 
 5. [Event](#eventjs)
 
-    [详细说明](https://gitwbp5.wbp5.com/npm/tool-ts/tree/dev/src/common/event/README.md)
+    [详细说明](https://gitwbp5.tostar.top/npm/tool-ts/tree/dev/src/common/event/README.md)
     ```
     包含方法：
     on:绑定方法  
@@ -129,7 +129,7 @@ getCookie("userKey")
 
 6. [Obj](#objjs)
 
-    [详细说明](https://gitwbp5.wbp5.com/npm/tool-ts/tree/dev/src/common/obj/README.md)
+    [详细说明](https://gitwbp5.tostar.top/npm/tool-ts/tree/dev/src/common/obj/README.md)
     ```
     包含方法：
     isObject:是否是object类型  
@@ -143,7 +143,7 @@ getCookie("userKey")
 
 7. [object](#objectjs)
 
-    [详细说明](https://gitwbp5.wbp5.com/npm/tool-ts/tree/dev/src/common/object/README.md)
+    [详细说明](https://gitwbp5.tostar.top/npm/tool-ts/tree/dev/src/common/object/README.md)
     ```
     包含方法：
     Object.keys()兼容性处理
@@ -151,7 +151,7 @@ getCookie("userKey")
 
 8. [array](#arrayjs)
     
-    [详细说明](https://gitwbp5.wbp5.com/npm/tool-ts/tree/dev/src/common/array/README.md)
+    [详细说明](https://gitwbp5.tostar.top/npm/tool-ts/tree/dev/src/common/array/README.md)
      ```
     包含方法：
     1.Array.prototype.find  
@@ -169,7 +169,7 @@ getCookie("userKey")
 
 9. [number](#numberjs)
 
-    [详细说明](https://gitwbp5.wbp5.com/npm/tool-ts/tree/dev/src/common/number/README.md)
+    [详细说明](https://gitwbp5.tostar.top/npm/tool-ts/tree/dev/src/common/number/README.md)
     ```
     包含方法：
     cutNumber:数字每三位加逗号  

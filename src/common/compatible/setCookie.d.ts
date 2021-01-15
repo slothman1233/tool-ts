@@ -7,4 +7,4 @@
                         h是指小时，如12小时则是：h12
                         d是天数，30天则：d30
  */
-export declare const setCookie: (name: string, value: string, time: string) => void;
+export declare const setCookie: (name: string, value: string, time: string, domain?: string) => void;
