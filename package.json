@@ -1,6 +1,6 @@
 {
-  "name": "@stl/tool-ts",
-  "version": "1.0.9",
+  "name": "wl-tool-ts",
+  "version": "1.0.10",
   "description": "ts工具库",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -62,10 +62,6 @@
   "dependencies": {},
   "directories": {
     "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://gitwbp5.wbp5.com/npm/tool-ts.git"
   },
   "keywords": [
     "tool"
