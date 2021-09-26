@@ -23,7 +23,7 @@ var gulpif = require("gulp-if"); //判断
 var karmaServer = require('karma').Server;
 var build = require('./node/gulp/build');
 var config = require("./node/gulp/config");
-var paths = build.paths;
+// var paths = build.paths;
 var isArrayFn = build.isArrayFn;
 // var babelify = require("babelify");
 plumber = require('gulp-plumber');
@@ -36,7 +36,7 @@ var minimist = require('minimist'); //命令行参数解析引擎
 const gulpLess = require("gulp-less");
 var compress = minimist(process.argv.slice(2)).compress ? JSON.parse(minimist(process.argv.slice(2)).compress) : false;
 var iswatch = minimist(process.argv.slice(2)).watch ? JSON.parse(minimist(process.argv.slice(2)).watch) : false;
-let filepath = paths.jspages
+let filepath = build.getSrc()
 //js的chagne会触发多次
 var jsLodingOver = true;
 
@@ -81,7 +81,7 @@ function bundle(src, cb, overmessge = true) {
 
 //压缩js
 gulp.task("js", function () {
-    return jsmin(config.js.dist + "/**/*.js", "dist", "./rev_manifest/js/");
+    return jsmin(build.getdistSrc(), "dist", "./rev_manifest/js/");
 })
 
 //引入glob
@@ -90,20 +90,19 @@ var webpack = require('webpack-stream');
 var named = require('vinyl-named');
 //entries函数
 var entries = function (dev) {
-    var jsDir = path.resolve(dev)
-    var entryFiles = glob.sync(jsDir)
-    var map = {};
-    for (var i = 0; i < entryFiles.length; i++) {
-        var filePath = entryFiles[i];
-        var filename = filePath.substring(filePath.lastIndexOf("/dist/") + 6, filePath.lastIndexOf('.'));
+    // var jsDir = path.resolve(dev)
+    // var entryFiles = glob.sync(jsDir)
+     var map = {};
+    for (var i = 0; i < dev.length; i++) {
+        var filePath = dev[i];
+        var filename = filePath.substring(filePath.lastIndexOf("/dist/") + 1, filePath.lastIndexOf('.'));
         map[filename] = filePath;
     }
-
     return map;
 }
 
 function jsmin(dev, dist, rev_manifest) {
-    if (glob.sync(path.resolve(dev)).length <= 0) {
+    if (dev.length <= 0) {
         return gulp.src(dev)
     }
     return gulp.src(dev)
@@ -126,7 +125,7 @@ function jsmin(dev, dist, rev_manifest) {
                     exclude: /node_modules/
                 }]
             },
-            entry: entries(dev),
+             entry: entries(dev),
             output: {
                 path: path.join(__dirname, "dist"),
                 filename: "[name].js"
@@ -142,9 +141,9 @@ function jsmin(dev, dist, rev_manifest) {
 };
 ////////////////////////////////   public    ///////////////////////////////////////////////
 //压缩public js
-gulp.task("public:js:min", function () {
-    return jsmin(config.public.script_dist + "/**/*.js", "dist", "./rev_manifest/public/js");
-})
+// gulp.task("public:js:min", function () {
+//     return jsmin(config.public.script_dist + "/**/*.js", "dist", "./rev_manifest/public/js");
+// })
 
 //css的public的文件生成版本并输出到dist/public里面
 gulp.task("publicless", function () {
@@ -270,8 +269,8 @@ gulp.task("gaStart",
     gulp.series(
         // 'clean',
         gulp.parallel('build', 'less', 'publicless'),
-        gulp.parallel('js', 'public:js:min'),
-        'rev'
+        gulp.parallel('js'),
+        //'rev'
     ))
 
 
