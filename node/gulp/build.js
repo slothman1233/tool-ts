@@ -1,13 +1,32 @@
 var path = require("path");
 var paths = {
     jspages: [
-        getSrc("./test/test.ts"),
-        getSrc("./index/index.ts"),
+        //  getSrc("./test/test.ts"),
+        //  getSrc("./index/index.ts"),
+        "./index/a/index.ts",
+        "./index/a/index.ts"
     ]
 };
+
+exports.getSrc = function getSrc() {
+    var pathAry = []
+    paths.jspages.forEach(src => {
+        pathAry.push(path.resolve(__dirname, '../../work/page', src))
+    });
+    return pathAry
+}
 //获取文件的绝对地址
-function getSrc(src) {
-    return path.resolve(__dirname, '../../work/page', src);
+// function getSrc(src) {
+//     return path.resolve(__dirname, '../../work/page', src);
+// }
+
+
+exports.getdistSrc = function distSrc() {
+    var pathAry = []
+    paths.jspages.forEach(src => {
+        pathAry.push(path.resolve(__dirname, '../../dist/scripts', src.replace(".ts", ".js")))
+    });
+    return pathAry
 }
 
 function isArrayFn(value) {
@@ -18,8 +37,7 @@ function isArrayFn(value) {
     }
 }
 
-paths.jspages.push(getSrc("../public/script/index.ts"));
+paths.jspages.push("../public/script/index.ts");
 
 exports.paths = paths;
-exports.getSrc = getSrc;
 exports.isArrayFn = isArrayFn;
